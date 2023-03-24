@@ -1,0 +1,15 @@
+[package]
+name = "bevy_pong_pacman"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = "0.7.0"
+
+[profile.release]
+lto = true
+debug = false
+debug-assertions = false
+opt-level = 3
