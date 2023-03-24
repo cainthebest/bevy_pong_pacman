@@ -1,3 +1,4 @@
+use bevy::diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin};
 use bevy::prelude::*;
 use std::ops::Mul;
 
@@ -256,6 +257,8 @@ fn main() {
         .add_plugins(DefaultPlugins)
         .add_plugin(PaddlePlugin)
         .add_plugin(BallPlugin)
+        .add_plugin(FrameTimeDiagnosticsPlugin::default())
+        .add_plugin(LogDiagnosticsPlugin::default())
         .add_startup_system(setup)
         .add_system(move_all_velocity_objects)
         .add_system(move_all_players.after(move_all_velocity_objects))
